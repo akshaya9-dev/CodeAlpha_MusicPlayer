@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A responsive music player built with HTML, CSS and JavaScript."
+    >
+
+    <title>CodeAlpha Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="music-player">
+
+        <!-- Player Header -->
+        <header class="player-header">
+            <h1>Music Player</h1>
+            <p>Listen to your favorite songs</p>
+        </header>
+
+
+        <!-- Album Artwork -->
+        <section class="album-section" aria-label="Album artwork">
+
+            <div class="album-art">
+                <img
+                    id="album-image"
+                    src="assets/images/image1.jpg"
+                    alt="Album artwork for Song One"
+                    width="240"
+                    height="240"
+                    fetchpriority="high"
+                >
+            </div>
+
+        </section>
+
+
+        <!-- Song Information -->
+        <section
+            class="song-info"
+            aria-label="Current song information"
+            aria-live="polite"
+        >
+            <h2 id="song-title">Song One</h2>
+            <p id="artist-name">Artist One</p>
+        </section>
+
+
+        <!-- Audio Element -->
+        <audio
+            id="audio-player"
+            preload="metadata"
+        ></audio>
+
+
+        <!-- Progress Bar -->
+        <section class="progress-section" aria-label="Song progress">
+
+            <span id="current-time" aria-label="Current time">0:00</span>
+
+            <input
+                type="range"
+                id="progress-bar"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Seek through current song"
+            >
+
+            <span id="duration" aria-label="Song duration">0:00</span>
+
+        </section>
+
+
+        <!-- Player Controls -->
+        <section class="player-controls" aria-label="Music controls">
+
+            <button
+                id="previous-btn"
+                type="button"
+                aria-label="Previous song"
+                title="Previous song"
+            >
+                ⏮
+            </button>
+
+            <button
+                id="play-btn"
+                type="button"
+                aria-label="Play song"
+                aria-pressed="false"
+                title="Play or pause"
+            >
+                ▶
+            </button>
+
+            <button
+                id="next-btn"
+                type="button"
+                aria-label="Next song"
+                title="Next song"
+            >
+                ⏭
+            </button>
+
+        </section>
+
+
+        <!-- Volume Control -->
+        <section class="volume-section" aria-label="Volume control">
+
+            <span aria-hidden="true">🔊</span>
+
+            <input
+                type="range"
+                id="volume-control"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                aria-label="Volume"
+            >
+
+        </section>
+
+
+        <!-- Playlist -->
+        <section class="playlist-section" aria-label="Playlist">
+
+            <h2>Playlist</h2>
+
+            <ul id="playlist">
+
+                <li class="playlist-item">
+                    <button
+                        class="song-button"
+                        type="button"
+                        data-song-index="0"
+                    >
+                        Song One
+                    </button>
+                </li>
+
+                <li class="playlist-item">
+                    <button
+                        class="song-button"
+                        type="button"
+                        data-song-index="1"
+                    >
+                        Song Two
+                    </button>
+                </li>
+
+                <li class="playlist-item">
+                    <button
+                        class="song-button"
+                        type="button"
+                        data-song-index="2"
+                    >
+                        Song Three
+                    </button>
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
